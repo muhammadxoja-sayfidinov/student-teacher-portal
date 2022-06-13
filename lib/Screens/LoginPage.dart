@@ -27,42 +27,52 @@ class _AuthScreenState extends State<AuthScreen> {
     return Stack(children: [
       Image.asset(
         'assets/images/login-background.png',
+        color: Colors.blue.withOpacity(1),
+        colorBlendMode: BlendMode.softLight,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         fit: BoxFit.cover,
       ),
       Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromRGBO(0, 0, 180, 0.5),
         body: Center(
           child: Container(
             width: 400,
             height: 600,
-            color: Colors.red,
+            color: Colors.red[500],
             child: SingleChildScrollView(
               child: Form(
                 key: _formKey,
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(40.0),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
                         width: 100,
-                        child: Image.asset(
-                            'assets/images/login-avatar.png',),
+                        height: 100,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(200)
+                            color: Colors.yellow,
+                            borderRadius: BorderRadius.circular(400)),
+                        child: const CircleAvatar(
+                          foregroundImage: AssetImage(
+                            'assets/images/login-avatar.png',
+                          ),
                         ),
                       ),
                       Text(
                         'Login',
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 35,
+                          // fontWeight: FontWeight
                         ),
+
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
+                           fillColor:Colors.white ,
                             labelText: 'Username',
                             counterStyle: TextStyle(color: Colors.white)),
                         validator: (email) {
@@ -80,9 +90,10 @@ class _AuthScreenState extends State<AuthScreen> {
                         height: 40,
                       ),
                       TextFormField(
+                        // style: TextStyle(color: Colors.white),
                         obscureText: true,
                         decoration:
-                            const InputDecoration(labelText: 'Password'),
+                            const InputDecoration(labelText: 'Password',focusColor: Colors.white),
                         validator: (password) {
                           if (password == null || password.isEmpty) {
                             return 'Please enter the password.';
@@ -95,15 +106,18 @@ class _AuthScreenState extends State<AuthScreen> {
                       const SizedBox(
                         height: 40,
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          sumbit();
-                        },
-                        child: Text('Login'),
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 20),
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            sumbit();
+                          },
+                          child: Text('Login'),
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 20),
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -114,10 +128,10 @@ class _AuthScreenState extends State<AuthScreen> {
                         child: Text(
                           'Forgot Password',
                           style: TextStyle(
-                              color: Colors.grey.shade600,
+                              color: Colors.white,
                               decoration: TextDecoration.underline),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

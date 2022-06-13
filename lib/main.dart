@@ -1,3 +1,4 @@
+import 'package:classmanager/Screens/AboutScreen.dart';
 import 'package:classmanager/Screens/LoginPage.dart';
 import 'package:flutter/material.dart';
 import 'Screens/HomePage.dart';
@@ -12,17 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(
-      //   textTheme: const TextTheme(
-      //     bodyText2: TextStyle(color: Colors.white),
-      //     subtitle1: TextStyle(
-      //       color: Colors.white, // <-- TextFormField input color
-      //     ),
-      //   ),
-      //     cardColor:
-      // ),
-      home: AuthScreen(),
-      routes: {AuthScreen.routeName: (context) => AuthScreen()},
+      theme: ThemeData(
+          primarySwatch:Colors.indigo
+
+          ),
+      home: HomePage(),
+      routes: {
+        AuthScreen.routeName: (context) => AuthScreen(),
+        AboutScreen.routeName: (context) => AboutScreen(),
+      },
     );
   }
 }
