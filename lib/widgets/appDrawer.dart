@@ -12,10 +12,88 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: double.infinity,
+      // width: double.infinity,
       backgroundColor: Colors.indigo,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: user=='login'?
+      Padding(
+        padding: const EdgeInsets.only(top: 25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'UpLoad Assigment',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                ' Assigment list',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'View Submissions',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'All Students List',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Class Students',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Write Notice',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Inbox',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Profile',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Change Password',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Log Out',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+          ],
+        ),
+      ):
+      Column(
         children: [
           AppBar(
             automaticallyImplyLeading: false,
@@ -55,78 +133,8 @@ class AppDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'UpLoad Assigment',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              ' Assigment list',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'View Submissions',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'All Students List',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Class Students',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Write Notice',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Inbox',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Profile',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Change Password',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Log Out',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-          ),
         ],
-      ),
+      )
     );
   }
 }
