@@ -1,8 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../models/teacher.dart';
+import '../provider/teachers.dart';
 
 class AuthScreen extends StatefulWidget {
-  AuthScreen({Key? key}) : super(key: key);
+
+  const AuthScreen({Key? key}) : super(key: key);
   static String routeName = 'auth-screen';
 
   @override
@@ -22,8 +27,23 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
+  var _init = true;
+
+  @override
+  void didChangeDependencies() {
+    if (_init) {
+      Provider.of<Teachers>(context)
+          .getTeacher();
+    }
+    _init = false;
+
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var teacherDate = Provider.of<Teachers>(context);
+    print(teacherDate.list);
     return Stack(children: [
       Image.asset(
         'assets/images/login-background.png',

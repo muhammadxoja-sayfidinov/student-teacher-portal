@@ -28,7 +28,7 @@ class AboutScreen extends StatelessWidget {
                 Container(
                   color: Colors.indigo,
                   child: Column(
-                    children: [
+                    children: const [
                       Text(
                         'About US',
                         style: TextStyle(
@@ -37,7 +37,7 @@ class AboutScreen extends StatelessWidget {
                         ),
                       ),
 
-                      const Text(
+                      Text(
 
                         '''Class Manager is a student-teacher portal with various classroom features like uploading
                           assignments, submissions, Class Notice and many more. 
